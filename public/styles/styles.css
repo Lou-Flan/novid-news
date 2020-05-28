@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+h3 {
+  font-family: 'Roboto', sans-serif;
+  color: #9c3bfd;
+  font-size: 1.5em;
+}
+
+.title {
+  font-size: 6em;
+  color: #62FFD0;
+  text-shadow: 1px 1px black, 2px 2px black, 3px 3px black;
+  -webkit-text-stroke: 2px black;
+  letter-spacing: 3px;
+}
+
+.sub-title {
+  font-size: 1em;
+}
+
+.word-pairs {
+  width: 80%;
+  height: 20%;
+}
+
+.news-container {
+  width: 90%;
+  height: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.news-container .news-item {
+  font-family: 'Courier New', Courier, monospace;
+  margin: 1em;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: 30%;
+  padding: 1em;
+}
+
+.news-container .news-item a {
+  -webkit-text-decoration-color: #9c3bfd;
+          text-decoration-color: #9c3bfd;
+}
+/*# sourceMappingURL=styles.css.map */
