@@ -28,6 +28,7 @@ h3 {
     text-shadow: 1px 1px black, 2px 2px black, 3px 3px black;
     -webkit-text-stroke: 2px black;
     letter-spacing: 3px;
+    text-align: center;
 }
 
 .sub-title{
@@ -50,7 +51,7 @@ h3 {
         font-family: 'Courier New', Courier, monospace;
         margin: 1em;
         flex-grow: 1;
-        width: 30%;
+        width: 40%;
         padding: 1em;
 
         a{
@@ -60,5 +61,21 @@ h3 {
     .redacted {
         background-color:  rgba(98, 255, 208, .5);
     }
+    
 }
 
+.img-container{
+    margin-bottom: 40px;
+
+        width: 150px;
+        height: 100px;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+}
+
+.date {
+    font-weight: 900;
+}
