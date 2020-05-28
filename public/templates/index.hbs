@@ -16,14 +16,18 @@
                 <a href="{{../prefix}} {{url}}"><h3>{{../prefix}} {{title}}</h3></a>
                     <p>{{../prefix}} {{description}}</p>
                 
-                <p>{{../prefix}} {{publishedAt}} </p>
+                <p class="date">{{../prefix}} {{publishedAt}} </p>
+                <div class="img-container">
+                    <img src="../seal.png" alt="seal of approval">  
+                </div>
+                
             </div>
             {{else}}
             <div class="news-item safe">
                 <a href="{{../prefix}} {{url}}"><h3>{{../prefix}} {{title}}</h3></a>
                     <p>{{../prefix}} {{description}}</p>
                 
-                <p>{{../prefix}} {{publishedAt}} </p>
+                <p class="date">{{../prefix}} {{publishedAt}} </p>
             </div>
             {{/if}}
         {{/each}}
