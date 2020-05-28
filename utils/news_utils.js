@@ -10,7 +10,7 @@ const getNews = async () => {
     const jsonData = await response.json();
     // function call here to redact and replace words
     const cleanedArticles = await articleCleaner(jsonData)
-    // console.log(jsonData)
+    console.log(jsonData)
     return cleanedArticles
     
   } catch(error) {
@@ -28,29 +28,21 @@ const articleCleaner = (data) => {
 
     unSafeWords.forEach((word, index) => {
       // console.log(word)
-
       if (title.includes(word)){
         // console.log(title)
         let wordRegex = new RegExp(word, "gmi");
         title = title.replace(wordRegex, safeWords[Math.floor(Math.random() * 20)])
-        console.log(title)
+        // console.log(title)
       }
       if (description.includes(word)){
         // console.log(description)
         let wordRegex = new RegExp(word, "gmi");
         description = description.replace(wordRegex, safeWords[Math.floor(Math.random() * 8)])
-        console.log(description)
+        // console.log(description)
       }
     })
-
-
-    
-
-
-
-    // if article.title || article.description contains any matches from unsafeWords then do something
-    // else don't edit the article
   })
+  return articles
   // return something here back to getNews
 }
 // methods to access data from news API call and save articles into obj

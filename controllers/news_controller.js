@@ -5,8 +5,10 @@ const {getNews} = require('../utils/news_utils')
 // res.render(index, {articles})
 const showNews = async (req, res) => {
     console.log("we are connected")
-    let news = await getNews()
-    res.send(news)
+    let articles = await getNews()
+    res.render('index', {
+        articles
+    })
 }
 
 module.exports = {showNews}
