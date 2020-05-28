@@ -5,7 +5,8 @@ const {getNews} = require('../utils/news_utils')
 // res.render(index, {articles})
 const showNews = (req, res) => {
     console.log("we are connected")
-    res.send("this is a page")
+    let news = getNews()
+    res.send(news)
 }
 
 module.exports = {showNews}
