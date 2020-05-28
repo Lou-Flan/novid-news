@@ -3,10 +3,12 @@ const {getNews} = require('../utils/news_utils')
 // handles what comes back from DB calls that are defined in the utilities
 
 // res.render(index, {articles})
-const showNews = (req, res) => {
+const showNews = async (req, res) => {
     console.log("we are connected")
-    let news = getNews()
-    res.send(news)
+    let articles = await getNews()
+    res.render('index', {
+        articles
+    })
 }
 
 module.exports = {showNews}
