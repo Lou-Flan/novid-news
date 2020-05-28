@@ -29,7 +29,7 @@ h3 {
 
 .title {
   font-size: 6em;
-  color: #62FFD0;
+  color: #62ffd0;
   text-shadow: 1px 1px black, 2px 2px black, 3px 3px black;
   -webkit-text-stroke: 2px black;
   letter-spacing: 3px;
@@ -72,5 +72,9 @@ h3 {
 .news-container .news-item a {
   -webkit-text-decoration-color: #9c3bfd;
           text-decoration-color: #9c3bfd;
+}
+
+.news-container .redacted {
+  background-color: rgba(98, 255, 208, 0.5);
 }
 /*# sourceMappingURL=styles.css.map */

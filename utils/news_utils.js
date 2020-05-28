@@ -10,7 +10,7 @@ const getNews = async () => {
     const jsonData = await response.json();
     // function call here to redact and replace words
     const cleanedArticles = await articleCleaner(jsonData)
-    console.log(jsonData)
+    // console.log(cleanedArticles)
     return cleanedArticles
     
   } catch(error) {
@@ -20,31 +20,29 @@ const getNews = async () => {
 
 const articleCleaner = (data) => {
   let articles = data.articles;
-  const safeWords = ["clown", "flower", "butterfly", "hatchback", "puppy", "satellite", "ocean", "Uranus"]
-  const unSafeWords = ["corona", "covid", "deaths", "sick", "infections", "covid-19", "vaccination", "trump", "donald", "masks", "health", "climate", "virus", "Art"]
+  const safeWords = ["clown", "rainbow party", "butterfly", "hatchback", "puppy dog eyes", "satellite", "an ocean particle", "Uranus"]
+  const unSafeWords = ["Coronavirus", "COVID"]
+
+  let cleanArticles = []
 
   articles.forEach((article) => {
-    let { title, description, url, publishedAt } = article;
-
-    unSafeWords.forEach((word, index) => {
-      // console.log(word)
-      if (title.includes(word)){
-        // console.log(title)
-        let wordRegex = new RegExp(word, "gmi");
-        title = title.replace(wordRegex, safeWords[Math.floor(Math.random() * 20)])
-        // console.log(title)
+    article.title = article.title.toLowerCase()
+    article.description = article.description.toLowerCase()
+    
+    let regex = new RegExp("\\b"+unSafeWords.join('|')+"\\b","gi")
+    article.redacted = false;
+      if(article.title.match(regex) || article.description.match(regex)){
+        article.redacted = true;
       }
-      if (description.includes(word)){
-        // console.log(description)
-        let wordRegex = new RegExp(word, "gmi");
-        description = description.replace(wordRegex, safeWords[Math.floor(Math.random() * 8)])
-        // console.log(description)
-      }
-    })
+    article.title = article.title.replace(regex, safeWords[Math.floor(Math.random() * 7)])
+    article.description = article.description.replace(regex, safeWords[Math.floor(Math.random() * 7)])
+   
+    cleanArticles.push(article)
+    console.log(cleanArticles)
   })
-  return articles
-  // return something here back to getNews
+  return cleanArticles
 }
+
 // methods to access data from news API call and save articles into obj
 
 // methods to call db to check for words then redact and replace words from the news articles before sending to controller to render
