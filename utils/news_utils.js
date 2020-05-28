@@ -1,6 +1,7 @@
 const api_key = require('dotenv').config();
 const api = process.env.API_KEY;
 const fetch = require('node-fetch');
+var moment = require('moment');
 // API call in here
 
 const getNews = async () => {
@@ -10,7 +11,6 @@ const getNews = async () => {
     const jsonData = await response.json();
     // function call here to redact and replace words
     const cleanedArticles = await articleCleaner(jsonData)
-    // console.log(cleanedArticles)
     return cleanedArticles
     
   } catch(error) {
@@ -26,8 +26,8 @@ const articleCleaner = (data) => {
   let cleanArticles = []
 
   articles.forEach((article) => {
-    article.title = article.title.toLowerCase()
-    article.description = article.description.toLowerCase()
+    // article.title = article.title.toLowerCase()
+    // article.description = article.description.toLowerCase()
     
     let regex = new RegExp("\\b"+unSafeWords.join('|')+"\\b","gi")
     article.redacted = false;
@@ -36,12 +36,14 @@ const articleCleaner = (data) => {
       }
     article.title = article.title.replace(regex, safeWords[Math.floor(Math.random() * 7)])
     article.description = article.description.replace(regex, safeWords[Math.floor(Math.random() * 7)])
-   
+    article.publishedAt = moment(article.publishedAt).format("MMMM Do, h:mm a"); 
     cleanArticles.push(article)
-    console.log(cleanArticles)
+    // console.log(cleanArticles)
   })
   return cleanArticles
 }
+
+
 
 // methods to access data from news API call and save articles into obj
 
