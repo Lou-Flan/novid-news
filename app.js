@@ -4,6 +4,7 @@ const cors = require('cors');
 const hbs = require('hbs');
 const bodyParser = require('body-parser');
 const router = express.Router();
+const { showNews } = require('./controllers/news_controller');
 
 const port = process.env.PORT || 3010;
 
@@ -21,8 +22,12 @@ app.set('views', './public/templates')
 app.use(express.static('./public'))
 
 // put news routes in here as user can only make a get request on news?
-// app.use('/', newsRouter);
-// router.get('/', showNews);
+app.use('/', router);
+router.get('/', showNews);
+
+// app.get('/', function (req, res) {
+//     res.send('hello world')
+// })
 
 // app.listen
 app.listen(port, () => {
