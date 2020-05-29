@@ -22,51 +22,16 @@ const getNews = async () => {
 //GET on database async getWords()
 // return await {safe, prohibited}
 
-const getWords = function () {
-   return Words.find().exec((err, words) => {
-    if (err) {
-        console.log(err)
-    }else{
-      return words;
-    }
-    
-})
+const getWords = () => {
+   let result = Words.find()
+   result.then((data) => {
+
+    data.forEach((word) => {
+      console.log(word.type)
+    })
+   })
+   return result
 }
-
-// const getPosts = function (req, res) {
-//   // execute the query from getAllPosts
-//   getAllPosts(req).
-//   sort({
-//       modified_date: -1
-//   }).
-//   exec((err, posts) => {
-//       if (err) {
-//           res.status(500);
-//           return res.json({
-//               error: err.message
-//           });
-//       }
-//       res.send(posts);
-//   });
-// };
-
-
-
-// const getWords = function () {
-//   return Words.find().exec((err, words) => {
-//     if (err) {
-//       console.log("error")
-//       return res.json({
-//         error: err.message
-//        });
-//     }
-//     console.log(words)
-//   })
-// }
-
-
-
-// console.log(getWords())
 
 const articleCleaner = (data) => {
   let articles = data.articles;
@@ -87,7 +52,9 @@ const articleCleaner = (data) => {
     
     let regex = new RegExp("\\b"+unSafeWords.join('|')+"\\b","gi")
     article.redacted = false;
-      if(article.title.match(regex) || article.description.match(regex)){
+    if (!article.title || !article.description) {
+      console.log("missing article title or description")
+    } else if(article.title.match(regex) || article.description.match(regex)){
         article.redacted = true;
       }
     article.title = article.title.replace(regex, safeWords[Math.floor(Math.random() * 7)])
