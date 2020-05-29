@@ -39,42 +39,6 @@ app.use(express.static('./public'))
 app.use('/', router);
 router.get('/', showNews);
 
-// set views engine to handlebars
-app.set('view engine', 'hbs')
-app.set('views', './public/templates')
-
-app.use(express.static('./public'))
-
-app.use('/', router);
-router.get('/', showNews);
-
-// set views engine to handlebars
-app.set('view engine', 'hbs')
-app.set('views', './public/templates')
-
-app.use(express.static('./public'))
-
-app.use('/', router);
-router.get('/', showNews);
-
-// set views engine to handlebars
-app.set('view engine', 'hbs')
-app.set('views', './public/templates')
-
-app.use(express.static('./public'))
-
-app.use('/', router);
-router.get('/', showNews);
-
-// set views engine to handlebars
-app.set('view engine', 'hbs')
-app.set('views', './public/templates')
-
-app.use(express.static('./public'))
-
-app.use('/', router);
-router.get('/', showNews);
-
 app.listen(port, () => {
     console.log(`News app listening on port ${port} HELL YEAH`);
 });
