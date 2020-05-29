@@ -3,14 +3,17 @@ const cors = require('cors');
 const hbs = require('hbs');
 const bodyParser = require('body-parser');
 const mongoose = require("mongoose");
+const cookieParser = require('cookie-parser');
 const router = express.Router();
 const { showNews } = require('./controllers/news_controller');
-const { getWords } = require('./utils/news_utils')
+const { getWords } = require('./utils/news_utils');
 
 const port = process.env.PORT || 3010;
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors());
+app.use(cookieParser("magic word"));
 
 // db connection
 const dbConn = "mongodb://localhost/novid_words"
