@@ -2,6 +2,7 @@ const api_key = require('dotenv').config();
 const api = process.env.API_KEY;
 const fetch = require('node-fetch');
 var moment = require('moment');
+const Words = require('../models/novid_words')
 // API call in here
 
 const getNews = async () => {
@@ -18,8 +19,63 @@ const getNews = async () => {
   }
 }
 
+//GET on database async getWords()
+// return await {safe, prohibited}
+
+const getWords = function () {
+   return Words.find().exec((err, words) => {
+    if (err) {
+        console.log(err)
+    }else{
+      return words;
+    }
+    
+})
+}
+
+// const getPosts = function (req, res) {
+//   // execute the query from getAllPosts
+//   getAllPosts(req).
+//   sort({
+//       modified_date: -1
+//   }).
+//   exec((err, posts) => {
+//       if (err) {
+//           res.status(500);
+//           return res.json({
+//               error: err.message
+//           });
+//       }
+//       res.send(posts);
+//   });
+// };
+
+
+
+// const getWords = function () {
+//   return Words.find().exec((err, words) => {
+//     if (err) {
+//       console.log("error")
+//       return res.json({
+//         error: err.message
+//        });
+//     }
+//     console.log(words)
+//   })
+// }
+
+
+
+// console.log(getWords())
+
 const articleCleaner = (data) => {
   let articles = data.articles;
+
+  // call getWords()
+  // getWords()
+  // const safeWords = getWords.safe
+  // const safeWords = getWords.prohibited
+
   const safeWords = ["clown", "rainbow party", "butterfly", "hatchback", "puppy dog eyes", "satellite", "an ocean particle", "Uranus"]
   const unSafeWords = ["Coronavirus", "COVID"]
 
@@ -51,4 +107,4 @@ const articleCleaner = (data) => {
 
 // hard code two arrays of safe words and banned words to use before connecting to db
 
-module.exports = {getNews}
+module.exports = {getNews, getWords}
