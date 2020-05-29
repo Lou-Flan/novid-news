@@ -1,3 +1,15 @@
-// APP 2.0 //
+const Word = require("../models/word")
 
-// http requests on db to add and remove words for admins
+const getAllWords1 = async function() {
+  const words = await Word.find();
+  return words;
+}
+
+const getAllWords2 = function(cb) {
+  Word.find().exec((err, words) => {
+    if (err) throw new Error(err);
+    cb(words);
+  });
+}
+
+module.exports = {getAllWords1, getAllWords2}

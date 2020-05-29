@@ -2,7 +2,7 @@ const api_key = require('dotenv').config();
 const api = process.env.API_KEY;
 const fetch = require('node-fetch');
 var moment = require('moment');
-const Words = require('../models/novid_words')
+const Words = require('../models/word')
 // API call in here
 
 const getNews = async () => {

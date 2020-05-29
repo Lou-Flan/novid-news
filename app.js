@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const mongoose = require("mongoose");
 const router = express.Router();
 const { showNews } = require('./controllers/news_controller');
-const { getWords } = require('./utils/news_utils')
+const { getAllWords1, getAllWords2 } = require('./utils/words_utils')
 
 const port = process.env.PORT || 3010;
 
@@ -27,7 +27,15 @@ mongoose.connect(
         console.log("Error connecting to database", err)
       } else {
         console.log("Connected to database!")
-        console.log(getWords());
+
+        getAllWords1()
+        .then(function(words) {
+          console.log(words);
+        });
+
+        getAllWords2(function(words) {
+          console.log(words);
+        });
       }
     }
   )

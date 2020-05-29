@@ -25,6 +25,7 @@
     "express": "^4.17.1",
     "hbs": "^4.1.1",
     "moment": "^2.26.0",
+    "mongo-seeding-cli": "^3.4.1",
     "mongoose": "^5.9.16",
     "node-fetch": "^2.6.0",
     "nodemon": "^2.0.4"
