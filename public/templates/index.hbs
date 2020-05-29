@@ -9,6 +9,11 @@
 <body>
     <h1 class="title">novid news</h1>
     <h2 class="sub-title">the covid-free headline source because we're all sick of it</h2>
+    <h2 class="sub-title">for a less depressing experience, the seal of approval has removed covid words</h2>
+    <div id="input">
+			<input type="text" id="word-input" />
+			<input type="submit" id="submit-word" value="remove a word" />	
+	</div>
     <div class="news-container">
         {{#each articles}}
             {{#if redacted}}
