@@ -9,6 +9,38 @@
     "type": "safe"
 },
 {
-    "word": "coronavirus",
+    "word": "death",
     "type": "prohibited"
-}]
+},
+{    "word": "rainbow party",
+    "type": "safe"
+},
+{    "word": "free hugs",
+    "type": "safe"
+},
+{    "word": "puppy dog eyes",
+    "type": "safe"
+},
+{    "word": "ocean particle",
+    "type": "safe"
+},
+{    "word": "Uranus",
+    "type": "safe"
+},
+{    "word": "kitten",
+    "type": "safe"
+},
+{    "word": "butterfly",
+    "type": "safe"
+},
+{    "word": "fluffy",
+    "type": "safe"
+},
+{    "word": "coronavirus",
+    "type": "prohibited"
+},
+{    "word": "clown",
+    "type": "safe"
+}
+
+]
