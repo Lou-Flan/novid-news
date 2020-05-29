@@ -27,7 +27,7 @@ mongoose.connect(
         console.log("Error connecting to database", err)
       } else {
         console.log("Connected to database!")
-        console.log(getWords());
+        // console.log(getWords());
       }
     }
   )
