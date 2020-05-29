@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const mongoose = require("mongoose");
 const router = express.Router();
 const { showNews } = require('./controllers/news_controller');
+const { getWords } = require('./utils/news_utils')
 
 const port = process.env.PORT || 3010;
 
@@ -26,6 +27,7 @@ mongoose.connect(
         console.log("Error connecting to database", err)
       } else {
         console.log("Connected to database!")
+        console.log(getWords());
       }
     }
   )
@@ -41,4 +43,4 @@ router.get('/', showNews);
 
 app.listen(port, () => {
     console.log(`News app listening on port ${port} HELL YEAH`);
-});
+}); 
