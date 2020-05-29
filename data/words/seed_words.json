@@ -1,0 +1,14 @@
+[{ "word": "balloons",
+    "type": "safe"
+},
+{
+    "word": "covid",
+    "type": "prohibited"
+},
+{    "word": "clown",
+    "type": "safe"
+},
+{
+    "word": "coronavirus",
+    "type": "prohibited"
+}]
