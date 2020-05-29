@@ -22,77 +22,42 @@ const getNews = async () => {
 //GET on database async getWords()
 // return await {safe, prohibited}
 
-const getWords = function () {
-   return Words.find().exec((err, words) => {
-    if (err) {
-        console.log(err)
-    }else{
-      return words;
-    }
-    
-})
+const getWords = async () => {
+  let result = await Words.find()
+  let safeWords = []
+  let unSafeWords = []
+
+  result.forEach((word) =>{
+    word.type === "safe" ? safeWords.push(word.word) : unSafeWords.push(word.word)
+  }
+  )
+
+   return {safeWords, unSafeWords}
 }
 
-
-// const getPosts = function (req, res) {
-//   // execute the query from getAllPosts
-//   getAllPosts(req).
-//   sort({
-//       modified_date: -1
-//   }).
-//   exec((err, posts) => {
-//       if (err) {
-//           res.status(500);
-//           return res.json({
-//               error: err.message
-//           });
-//       }
-//       res.send(posts);
-//   });
-// };
-
-
-
-// const getWords = function () {
-//   return Words.find().exec((err, words) => {
-//     if (err) {
-//       console.log("error")
-//       return res.json({
-//         error: err.message
-//        });
-//     }
-//     console.log(words)
-//   })
-// }
-
-
-
-// console.log(getWords())
-
-const articleCleaner = (data) => {
+const articleCleaner = async (data) => {
   let articles = data.articles;
 
-  // call getWords()
-  // getWords()
-  // const safeWords = getWords.safe
-  // const safeWords = getWords.prohibited
-
-  const safeWords = ["clown", "rainbow party", "butterfly", "hatchback", "puppy dog eyes", "satellite", "an ocean particle", "Uranus"]
-  const unSafeWords = ["Coronavirus", "COVID"]
+  let dbWords = await getWords()
+  console.log("from the cleaner",dbWords)
+  const safeWords = dbWords.safeWords
+  const unSafeWords = dbWords.unSafeWords
+  
 
   let cleanArticles = []
 
   articles.forEach((article) => {
-    // article.title = article.title.toLowerCase()
-    // article.description = article.description.toLowerCase()
+
     
     let regex = new RegExp("\\b"+unSafeWords.join('|')+"\\b","gi")
     article.redacted = false;
-      if(article.title.match(regex) || article.description.match(regex)){
+    if (!article.title || !article.description) {
+      console.log("missing article title or description")
+    } else if(article.title.match(regex) || article.description.match(regex)){
         article.redacted = true;
       }
-    article.title = article.title.replace(regex, safeWords[Math.floor(Math.random() * 7)])
-    article.description = article.description.replace(regex, safeWords[Math.floor(Math.random() * 7)])
+    article.title = article.title.replace(regex, safeWords[Math.floor(Math.random() * 2)])
+    article.description = article.description.replace(regex, safeWords[Math.floor(Math.random() * 2)])
     article.publishedAt = moment(article.publishedAt).format("MMMM Do, h:mm a"); 
     cleanArticles.push(article)
     // console.log(cleanArticles)
