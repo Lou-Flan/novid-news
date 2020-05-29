@@ -1,0 +1,11 @@
+{ "safe_words": {
+    "safe": ["balloons", "kittens", "loving flower", "happiness machine", "clown", "Rainbow Party", "butterfly", "hatchback", "puppy dog eyes", "satellite", "Uranus"]
+},
+    "prohibited_words": {
+    "prohibited": ["covid", "coronavirus", "death", "trump"]
+}
+}
+
+
+
+
