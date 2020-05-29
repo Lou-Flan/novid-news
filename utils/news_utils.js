@@ -56,8 +56,8 @@ const articleCleaner = async (data) => {
     } else if(article.title.match(regex) || article.description.match(regex)){
         article.redacted = true;
       }
-    article.title = article.title.replace(regex, safeWords[Math.floor(Math.random() * 2)])
-    article.description = article.description.replace(regex, safeWords[Math.floor(Math.random() * 2)])
+    article.title = article.title.replace(regex, safeWords[Math.floor(Math.random() * safeWords.length)])
+    article.description = article.description.replace(regex, safeWords[Math.floor(Math.random() * safeWords.length)])
     article.publishedAt = moment(article.publishedAt).format("MMMM Do, h:mm a"); 
     cleanArticles.push(article)
     // console.log(cleanArticles)
