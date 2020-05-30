@@ -1,4 +1,5 @@
-## NOVID News
+
+# NOVID News
 
 An express app developed as part of the Coder Academy hackathon 2020. Theme: Post-pandemic.
 
@@ -9,11 +10,12 @@ An express app developed as part of the Coder Academy hackathon 2020. Theme: Pos
 - Ignacio Giadach: https://github.com/igscl
 - Luisa Ziccarelli: https://github.com/luisaziccarelli 
 
-##Github repository: 
+## Github repository: 
 
 https://github.com/Lou-Flan/novid-news 
 
-##Deployed App: 
+
+## Deployed App: 
 
 https://novid-news.herokuapp.com/
 
