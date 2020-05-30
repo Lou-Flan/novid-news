@@ -18,11 +18,11 @@ body {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   min-height: 100vh;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
-h3 {
-  font-family: 'Roboto', sans-serif;
+a {
+  font-family: "Roboto", sans-serif;
   color: #9c3bfd;
   font-size: 1.5em;
 }
@@ -38,6 +38,7 @@ h3 {
 
 .sub-title {
   font-size: 1em;
+  text-align: center;
 }
 
 .word-pairs {
@@ -61,7 +62,7 @@ h3 {
 }
 
 .news-container .news-item {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   margin: 1em;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -87,22 +88,35 @@ h3 {
   }
 }
 
-.news-container .redacted {
+.redacted {
   background-color: rgba(98, 255, 208, 0.5);
 }
 
-.img-container {
-  margin-bottom: 40px;
-  width: 150px;
-  height: 100px;
+.user-redacted {
+  background-color: rgba(254, 210, 66, 0.5);
 }
 
-.img-container img {
-  width: 100%;
+img {
+  margin-bottom: 40px;
+  width: 200px;
   height: auto;
 }
 
 .date {
   font-weight: 900;
+}
+
+#input {
+  margin: 20px;
+}
+
+#word-input {
+  padding: 1em;
+}
+
+#submit-word {
+  background: #faa2a2;
+  padding: 1em;
+  border: 1px solid #faa2a2;
 }
 /*# sourceMappingURL=styles.css.map */
