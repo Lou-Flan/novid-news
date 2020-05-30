@@ -12,7 +12,11 @@ const port = process.env.PORT || 3010;
 const app = express();
 app.use(bodyParser.json());
 
-const dbConn = "mongodb://localhost/novid_words";
+if(process.env.NODE_ENV !== 'production') {
+  require('dotenv').config();
+}
+
+const dbConn = process.env.MONGODB_URI || 'mongodb://localhost/novid_words';
 
 mongoose.connect(
   dbConn,
