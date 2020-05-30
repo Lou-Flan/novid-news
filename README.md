@@ -1,3 +1,4 @@
+
 # NOVID News
 
 An express app developed as part of the Coder Academy hackathon 2020. Theme: Post-pandemic.
@@ -5,7 +6,7 @@ An express app developed as part of the Coder Academy hackathon 2020. Theme: Pos
 ## Contributors
 
 - Louise Flanagan: https://github.com/Lou-Flan
-- Catherine Calcolt-Stevens: https://github.com/catcstevens 
+- Catherine Callcoltt-Stevens: https://github.com/catcstevens 
 - Ignacio Giadach: https://github.com/igscl
 - Luisa Ziccarelli: https://github.com/luisaziccarelli 
 
@@ -76,7 +77,7 @@ DevOps: Git, Github, VS Code.
 ![trello screenshot](screenshots/screenshot_trello2.png)
 
 
-# Screenshots 
+## Screenshots 
 
 ![screenshot website](screenshots/screenshot_page1.png)
 
