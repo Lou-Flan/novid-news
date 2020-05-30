@@ -1,3 +1,4 @@
+  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,11 +10,16 @@
 <body>
     <h1 class="title">novid news</h1>
     <h2 class="sub-title">the covid-free headline source because we're all sick of it</h2>
+    <h2 class="sub-title">for a less depressing experience, the seal of approval has removed covid words</h2>
+    <div id="input">
+			<input type="text" id="word-input" />
+			<input type="submit" id="submit-word" value="remove another word" />	
+	</div>
     <div class="news-container">
         {{#each articles}}
             {{#if redacted}}
             <div class="news-item redacted">
-                <a href="{{../prefix}} {{url}}"><h3>{{../prefix}} {{title}}</h3></a>
+                <a href="{{../prefix}} {{url}}">{{../prefix}} {{title}}</a>
                     <p>{{../prefix}} {{description}}</p>
                 
                 <p class="date">{{../prefix}} {{publishedAt}} </p>
@@ -24,7 +30,7 @@
             </div>
             {{else}}
             <div class="news-item safe">
-                <a href="{{../prefix}} {{url}}"><h3>{{../prefix}} {{title}}</h3></a>
+                <a href="{{../prefix}} {{url}}">{{../prefix}} {{title}}</a>
                     <p>{{../prefix}} {{description}}</p>
                 
                 <p class="date">{{../prefix}} {{publishedAt}} </p>
