@@ -6,7 +6,7 @@ An express app developed as part of the Coder Academy hackathon 2020. Theme: Pos
 ## Contributors
 
 - Louise Flanagan: https://github.com/Lou-Flan
-- Catherine Callcoltt-Stevens: https://github.com/catcstevens 
+- Catherine Callcott-Stevens: https://github.com/catcstevens 
 - Ignacio Giadach: https://github.com/igscl
 - Luisa Ziccarelli: https://github.com/luisaziccarelli 
 
