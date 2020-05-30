@@ -13,6 +13,10 @@ An express app developed as part of the Coder Academy hackathon 2020. Theme: Pos
 
 https://github.com/Lou-Flan/novid-news 
 
+##Deployed App: 
+
+https://novid-news.herokuapp.com/
+
 ##What is the problem this app is trying to solve?
 
 During the coronavirus pandemic most people's lives has been affected in a number of different ways. For some people the overload exposure in the media with news and updates about the pandemic has had impacts on their mental health (i.e anxiety, isolation, problems sleeping, etc.). 
@@ -65,9 +69,14 @@ DevOps: Git, Github, VS Code.
 
 ##Trello
 
+![trello screenshot](screenshots/screenshot_trello1.png)
 
+
+![trello screenshot](screenshots/screenshot_trello2.png)
 
 
 #Screenshots 
 
-![]()
+![screenshot website](screenshots/screenshot_page1.png)
+
+![screenshot website](screenshots/screenshot_page2.png)
