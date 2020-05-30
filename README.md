@@ -23,7 +23,7 @@ https://novid-news.herokuapp.com/
 
 During the coronavirus pandemic most people's lives has been affected in a number of different ways. For some people the overload exposure in the media with news and updates about the pandemic has had impacts on their mental health (i.e anxiety, isolation, problems sleeping, etc.). 
 
-Novid news is a website for people interested in reading the news but who are sick and tired of seeing the words related to the pandemic (i.e "coronavirs", "covid"). 
+Novid news is a website for people interested in reading the news but who are sick and tired of seeing the words related to the pandemic (i.e "coronavirus", "covid"). 
 
 The Novid news app is mean to bring a sense of humour and silliness into those user's daily life while still allowing them to stay informed and up to date with what is happening in the world.
 
