@@ -1,17 +1,23 @@
+
 # NOVID News
 
 An express app developed as part of the Coder Academy hackathon 2020. Theme: Post-pandemic.
 
+## Deployed App: 
+
+https://novid-news.herokuapp.com/
+
 ## Contributors
 
 - Louise Flanagan: https://github.com/Lou-Flan
-- Catherine Calcott-Stevens: https://github.com/catcstevens 
+- Catherine Callcott-Stevens: https://github.com/catcstevens 
 - Ignacio Giadach: https://github.com/igscl
 - Luisa Ziccarelli: https://github.com/luisaziccarelli 
 
 ## Github repository: 
 
 https://github.com/Lou-Flan/novid-news 
+
 
 ## What is the problem this app is trying to solve?
 
@@ -60,4 +66,6 @@ DevOps: Git, Github, VS Code.
 
 ![](novid.jpg)
 
+## Screenshot
 
+![](novid.png)

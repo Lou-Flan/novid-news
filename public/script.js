@@ -1,6 +1,3 @@
-let text = document.querySelectorAll("p");
-let titles = document.querySelectorAll("a");
-
 let articles = document.querySelectorAll(".news-item")
 
 safeWords = [
@@ -22,43 +19,35 @@ function addWord(event) {
      return
   }
 
-  titles.forEach((element) => {
-    let regex = new RegExp(word, "gi")
+  articles.forEach((element) => {
+    let regex = new RegExp(word, "gi");
+    let text = element.querySelector("p");
+    let title = element.querySelector("a");
 
-    if (element.innerHTML.match(regex)){
-        element.parentElement.classList.add("user-redacted");
-        if(element.parentElement.querySelector("img") === null) {
-            let img = document.createElement("img")
-            img.src = "./seal.png"
-            element.parentElement.appendChild(img)
+    if (text.innerHTML.match(regex) || title.innerHTML.match(regex)){
+            element.classList.add("user-redacted");
+            if(element.querySelector("img") === null) {
+                let img = document.createElement("img")
+                img.src = "./seal.png"
+                element.appendChild(img)
+            }
         }
+    if (text.innerHTML.match(regex)){
+      elementToChange = text.textContent;
+      text.textContent = elementToChange.replace(
+        regex,
+        safeWords[Math.floor(Math.random() * safeWords.length)]
+      );
     }
 
-    elementToChange = element.textContent;
-    element.textContent = elementToChange.replace(
-      word,
-      safeWords[Math.floor(Math.random() * safeWords.length)]
-    );
-  });
-
-  text.forEach((element) => {
-    let regex = new RegExp(word, "gi")
-
-    if (element.innerHTML.match(regex)){
-        element.parentElement.classList.add("user-redacted");
-        if(element.parentElement.querySelector("img") === null) {
-            let img = document.createElement("img")
-            img.src = "./seal.png"
-            element.parentElement.appendChild(img)
-        }
+    if (title.innerHTML.match(regex)){
+      elementToChange = title.textContent;
+      title.textContent = elementToChange.replace(
+        regex,
+        safeWords[Math.floor(Math.random() * safeWords.length)]
+      );
     }
-
-    elementToChange = element.textContent;
-    element.textContent = elementToChange.replace(
-      word,
-      safeWords[Math.floor(Math.random() * safeWords.length)]
-    );
-  });
+  })
 }
 
 document.getElementById("submit-word").addEventListener("click", addWord);
