@@ -26,7 +26,7 @@
     "hbs": "^4.1.1",
     "moment": "^2.26.0",
     "mongoose": "^5.9.16",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.7",
     "nodemon": "^2.0.4"
   },
   "engines": {
